@@ -1,0 +1,65 @@
+# DBOS ignore file - files and directories to exclude from DBOS deployment
+
+# Dependencies
+node_modules/
+
+# Environment files (use DBOS secrets instead)
+.env
+.env.*
+
+# Build artifacts
+dist/
+build/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+
+# Test files
+test/
+tests/
+*.test.ts
+*.test.js
+*.spec.ts
+*.spec.js
+
+# Development files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Documentation
+docs/
+README.md
+*.md
+
+# Git files
+.git/
+.gitignore
+
+# Temporary files
+tmp/
+temp/
+
+# Database files (use DBOS managed database)
+*.db
+*.sqlite
+*.sqlite3
+
+# Upload directories (use DBOS storage)
+uploads/
+
+# Frontend build artifacts
+frontend/dist/
+frontend/build/
+frontend/node_modules/
+
+# Package manager files
+package-lock.json
+yarn.lock
+
+# OS files
+.DS_Store
+Thumbs.db

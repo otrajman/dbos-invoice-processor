@@ -1,0 +1,22 @@
+name: dbos-invoice-processor
+language: node
+database_url: ${DBOS_DATABASE_URL}
+
+runtimeConfig:
+  entrypoints:
+    - dist/index.js
+
+database:
+  hostname: 'localhost'
+  migrate:
+    - npx knex migrate:latest
+  sys_db_name: 'dbos_invoice_processor_dbos_sys'
+
+http:
+  cors_middleware: true
+  credentials: true
+  port: ${PORT:-3000}
+
+# Explicitly configure admin server port to avoid conflicts
+admin:
+  port: ${ADMIN_PORT:-3001}

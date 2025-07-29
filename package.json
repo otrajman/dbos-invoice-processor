@@ -1,0 +1,55 @@
+{
+  "name": "dbos-invoice-processor",
+  "version": "1.0.0",
+  "description": "AI-Powered Invoice Processing Application",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "tsc",
+    "build:frontend": "cd frontend && npm i && npm run build",
+    "start": "npx dbos start",
+    "start:node": "node dist/index.js",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "ts-node src/index.ts",
+    "dev:frontend": "cd frontend && npm run dev",
+    "migrate": "knex migrate:latest",
+    "seed": "knex seed:run",
+    "test": "jest",
+    "install:all": "npm install && cd frontend && npm install",
+    "clean": "rm -rf dist && rm -rf frontend/dist"
+  },
+  "keywords": [
+    "invoice",
+    "processing",
+    "ai",
+    "dbos"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@dbos-inc/dbos-sdk": "^2.10.24",
+    "@types/express": "^5.0.3",
+    "@types/multer": "^2.0.0",
+    "@types/pdfkit": "^0.17.2",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "knex": "^3.1.0",
+    "multer": "^2.0.2",
+    "pdfkit": "^0.17.1",
+    "pg": "^8.11.3",
+    "zod": "^4.0.10"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.10.5",
+    "@types/pg": "^8.10.9",
+    "@types/supertest": "^6.0.3",
+    "concurrently": "^9.2.0",
+    "jest": "^30.0.5",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
